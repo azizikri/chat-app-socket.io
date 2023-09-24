@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "concurrently": "^8.2.1"
+  },
+  "scripts": {
+    "dev": "concurrently --names \"server,client\" -c \"bgBlue.bold,bgMagenta.bold\" \"cd server && npm start\" \"cd client && npm run dev\"",
+    "config": "concurrently --names \"server,client\" -c \"bgBlue.bold,bgMagenta.bold\" \"cd server && npm i && cp .env.example .env\" \"cd client && npm i && cp .env.example .env\""
+  }
+
+
+}
