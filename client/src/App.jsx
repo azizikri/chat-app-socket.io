@@ -18,14 +18,18 @@ function App() {
 
   const [room, setRoom] = useState('');
   const [roomJoined, setRoomJoined] = useState(false);
+  const [currentRoom, setCurrentRoom] = useState('');
+
 
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
 
   const joinRoom = () => {
-    if (room !== '') {
+    if (room !== '' && room !== currentRoom) {
       socket.emit('join_room', room);
+      setCurrentRoom(room)
       setRoomJoined(true);
+      setMessages([]);
     }
   };
 
