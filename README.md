@@ -4,15 +4,14 @@
 
 ``` bash
 cd chat-app-socket.io
-npm run config
+npm i && npm run config
 ```
 
 ## Configure .env
 
 Set client & server url and server port
 
-
-# Running the application
+## Running the application
 
 ```bash
 cd chat-app-socket.io
