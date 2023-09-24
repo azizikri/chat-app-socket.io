@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: process.env.CLIENT_URL,
+        origin: process.env.CLIENT_URL || 'http://localhost:5173',
         methods: ['GET', 'POST'],
     },
 });
@@ -31,6 +31,6 @@ io.on('connection', (socket) => {
 });
 
 
-server.listen(1503, () => {
+server.listen(process.env.PORT || 3031, () => {
     console.log(`server is running`);
 });
